@@ -31,11 +31,11 @@ const Sidemenubar = () => {
                     New
                 </Link>
                 <Link href={"/popular"} className={`text-[#111] text-[17px] opacity-70 hover:opacity-100 rounded-xl py-2 px-3 items-center gap-2 flex w-[80%] ${pathname === '/popular' ? 'bg-[#bebebe50] opacity-100 hover:bg-[#bebebe77]' : 'hover:bg-[#bebebe20]'}`}>
-                    <Image width={20} height={20} src={`${pathname === '/popular' ? '/icons/popular1.png' : '/icons/popular0.png'}`} alt="" />
+                    <Image width={16} height={16} src={`${pathname === '/popular' ? '/icons/popular1.png' : '/icons/popular0.png'}`} alt="" />
                     Popular
                 </Link>
                 <Link href={"/random"} className={`text-[#111] text-[17px] opacity-70 hover:opacity-100 rounded-xl py-2 px-3 items-center gap-2 flex w-[80%] ${pathname === '/random' ? 'bg-[#bebebe50] opacity-100 hover:bg-[#bebebe77]' : 'hover:bg-[#bebebe20]'}`}>
-                    <Image width={20} height={20} src="/icons/random.png" alt="" />
+                    <Image width={18} height={18} src="/icons/random.png" alt="" />
                     Random
                 </Link>
                 <Link href={"/collection"} className={`text-[#111] text-[17px] opacity-70 hover:opacity-100 rounded-xl py-2 px-3 items-center gap-2 flex w-[80%] ${pathname === '/collection' ? 'bg-[#bebebe50] opacity-100 hover:bg-[#bebebe77]' : 'hover:bg-[#bebebe20]'}`}>
