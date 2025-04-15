@@ -124,7 +124,7 @@ const Center = ({ guestMovies, setGuestMovies, MovieInfoId }) => {
                     ))}
                 </div>
                 <div className={`${pathname === '/search-palette' ? "block" : "hidden"}`}>
-                    <div className="w-full h-[120px] bg-yellow-100"> for adds</div>
+                    <div className="w-full h-[120px] bg-yellow-100"></div>
                 </div>
                 {filteredMovies.length === 0
                     ? <p className={`text-gray-500 text-sm p-5 ${pathname === '/search-palette' ? "block" : "hidden"}`}>Sorry, We don't have any match for your search!</p>
@@ -204,7 +204,7 @@ const Center = ({ guestMovies, setGuestMovies, MovieInfoId }) => {
                 </div>
 
                 <div className={`${pathname === '/random' ? "block" : "hidden"}`}>
-                    <div className="w-full h-[120px] bg-yellow-100"> for adds</div>
+                    <div className="w-full h-[120px] bg-yellow-100"></div>
                     <div className="w-full flex py-2 items-center">
                         <h3 className='text-xl'>Here come 10 random flicks for your watchlist!</h3>
                     </div>
@@ -248,7 +248,7 @@ const Center = ({ guestMovies, setGuestMovies, MovieInfoId }) => {
                 </div>
 
                 <div className={`${pathname === '/collection' ? "block" : "hidden"}`}>
-                    <div className="w-full h-[120px] bg-yellow-100"> for adds</div>
+                    <div className="w-full h-[120px] bg-yellow-100"></div>
                     <div className="w-full flex justify-between py-2 items-center">
                         <h3 className='text-xl'>My collection</h3>
                         <h4 className='text-[13px] text-gray-500'>{guestMovies.length} Tile</h4>
@@ -295,7 +295,7 @@ const Center = ({ guestMovies, setGuestMovies, MovieInfoId }) => {
                     </div>)
                 }
                 <div className={`${pathname === `/search-palette/${infoMovie._id}` ? "block" : "hidden"}`}>
-                    <div className="w-full h-[120px] bg-yellow-100"> for adds</div>
+                    <div className="w-full h-[120px] bg-yellow-100"></div>
                 </div>
                 {infoMovie.length === 0
                     ? <p className={`text-gray-500 text-sm p-5 ${pathname === `/search-palette/${infoMovie._id}` ? "block" : "hidden"}`}>Sorry, We don't have any data for this!</p>

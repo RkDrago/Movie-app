@@ -33,7 +33,7 @@ const Right = ({ guestMovies, setGuestMovies }) => {
                 </div>
             </div>
             <div className='bg-green-200 h-[38%] m-2'>
-                For adds
+                
             </div>
         </>
     )
