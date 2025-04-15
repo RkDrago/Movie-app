@@ -1,9 +1,5 @@
 {
   "/page": "app/page.js",
-  "/admin/movies/page": "app/admin/movies/page.js",
   "/search-palette/page": "app/search-palette/page.js",
-  "/admin/page": "app/admin/page.js",
-  "/admin/dashboard/page": "app/admin/dashboard/page.js",
-  "/search-palette/[id]/page": "app/search-palette/[id]/page.js",
-  "/admin/new-movie/page": "app/admin/new-movie/page.js"
+  "/search-palette/[id]/page": "app/search-palette/[id]/page.js"
 }
