@@ -11,7 +11,7 @@ const Page = () => {
     if (!token) {
       router.push("/admin"); // Redirect to login page
     }
-  }, []);
+  }, [router]);
 
   const handleLogout = () => {
     localStorage.removeItem("token");

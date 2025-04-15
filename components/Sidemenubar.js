@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { genreContext } from '@/context/context'
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 
 const Sidemenubar = () => {
     const pathname = usePathname();
@@ -26,19 +27,19 @@ const Sidemenubar = () => {
         <>
             <section className='min-h-48 py-1 flex flex-col items-center gap-1.5'>
                 <Link href={"/"} className={`text-[#111] text-[17px] opacity-70 hover:opacity-100 rounded-xl py-2 px-3 items-center gap-2 flex w-[80%] ${pathname === '/' ? 'bg-[#bebebe50] opacity-100 hover:bg-[#bebebe77]' : 'hover:bg-[#bebebe20]'}`}>
-                    <img className='size-5' src={`${pathname === '/' ? '/icons/new1.png' : '/icons/new0.png'}`} alt="" />
+                    <Image width={20} height={20} src={`${pathname === '/' ? '/icons/new1.png' : '/icons/new0.png'}`} alt="" />
                     New
                 </Link>
                 <Link href={"/popular"} className={`text-[#111] text-[17px] opacity-70 hover:opacity-100 rounded-xl py-2 px-3 items-center gap-2 flex w-[80%] ${pathname === '/popular' ? 'bg-[#bebebe50] opacity-100 hover:bg-[#bebebe77]' : 'hover:bg-[#bebebe20]'}`}>
-                    <img className='size-5' src={`${pathname === '/popular' ? '/icons/popular1.png' : '/icons/popular0.png'}`} alt="" />
+                    <Image width={20} height={20} src={`${pathname === '/popular' ? '/icons/popular1.png' : '/icons/popular0.png'}`} alt="" />
                     Popular
                 </Link>
                 <Link href={"/random"} className={`text-[#111] text-[17px] opacity-70 hover:opacity-100 rounded-xl py-2 px-3 items-center gap-2 flex w-[80%] ${pathname === '/random' ? 'bg-[#bebebe50] opacity-100 hover:bg-[#bebebe77]' : 'hover:bg-[#bebebe20]'}`}>
-                    <img className='size-5' src="/icons/random.png" alt="" />
+                    <Image width={20} height={20} src="/icons/random.png" alt="" />
                     Random
                 </Link>
                 <Link href={"/collection"} className={`text-[#111] text-[17px] opacity-70 hover:opacity-100 rounded-xl py-2 px-3 items-center gap-2 flex w-[80%] ${pathname === '/collection' ? 'bg-[#bebebe50] opacity-100 hover:bg-[#bebebe77]' : 'hover:bg-[#bebebe20]'}`}>
-                    <img className='h-[18px]' src={`${pathname === '/collection' ? '/icons/collection1.png' : '/icons/collection0.png'}`} alt="" />
+                    <Image width={20} height={18} src={`${pathname === '/collection' ? '/icons/collection1.png' : '/icons/collection0.png'}`} alt="" />
                     Collection
                 </Link>
             </section>

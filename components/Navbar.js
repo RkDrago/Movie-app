@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef, useContext } from "react";
 import Link from "next/link";
 import { genreContext } from "@/context/context";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const Navbar = () => {
     const [searchQuery, setSearchQuery] = useState("");
@@ -93,7 +94,7 @@ const Navbar = () => {
             const matchesGenre =
                 selectedGenres.length === 0 ||
                 selectedGenres.every((genre) =>
-                    movie.genre.map((g) => g.toLowerCase()).includes(genre.toLowerCase())
+                    Array.isArray(movie.genre) && movie.genre.map((g) => g.toLowerCase()).includes(genre.toLowerCase())
                 );
 
             const matchesYear =
@@ -104,7 +105,7 @@ const Navbar = () => {
 
         setFilteredMovies(filtered);
 
-    }, [allMovies, selectedGenres, selectedYear, searchQuery]);
+    }, [allMovies, selectedGenres, selectedYear, searchQuery, setFilteredMovies]);
 
     return (
 
@@ -113,7 +114,7 @@ const Navbar = () => {
                 {/* Logo */}
                 <div className="flex h-[65px] sm:w-[200px] w-[15%]">
                     <Link href={"/"} className="flex mx-auto items-center">
-                        <img className="size-12 font-serif" src="/imgs/logo.png" alt="" />
+                        <Image width={48} height={48} className="size-12 font-serif" src="/imgs/logo.png" alt="" />
                         <span className="font-serif xl:text-[20px] inter sm:block hidden">
                             Movie Hunt
                         </span>
@@ -187,7 +188,7 @@ const Navbar = () => {
                         onClick={() => setIsOpen(!isOpen)}
                         ref={buttonRef}
                     >
-                        <img className="w-5" src={isOpen ? "/icons/more1.png" : "/icons/more0.png"} alt="More" />
+                        <Image width={20} height={20} src={isOpen ? "/icons/more1.png" : "/icons/more0.png"} alt="More" />
                     </div>
 
                     {/* Dropdown Menu */}

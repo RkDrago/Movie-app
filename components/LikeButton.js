@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useState, useEffect } from "react";
 
 const LikeButton = ({ movieId }) => {
@@ -44,8 +45,8 @@ const LikeButton = ({ movieId }) => {
             onClick={handleLike}
             className="border border-[#58585878] bg-[#bebebe20] cursor-pointer flex justify-center items-center h-full px-3.5 rounded-full hover:bg-[#bebebe62]"
         >
-            <img
-                className="w-[20px] transition-all"
+            <Image
+                 width={20} height={20}
                 src={liked ? "/icons/like1.png" : "/icons/like0.png"}
                 alt="like-icon"
             />

@@ -13,7 +13,7 @@ const Page = () => {
         if (!token) {
             router.push("/admin");
         }
-    }, []);
+    }, [router]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();

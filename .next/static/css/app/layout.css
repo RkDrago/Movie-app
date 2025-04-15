@@ -506,9 +506,6 @@
   .h-\[17px\] {
     height: 17px;
   }
-  .h-\[18px\] {
-    height: 18px;
-  }
   .h-\[20\%\] {
     height: 20%;
   }
@@ -568,9 +565,6 @@
   }
   .min-h-\[300px\] {
     min-height: 300px;
-  }
-  .w-5 {
-    width: calc(var(--spacing) * 5);
   }
   .w-7 {
     width: calc(var(--spacing) * 7);

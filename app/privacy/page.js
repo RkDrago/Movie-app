@@ -4,7 +4,7 @@ const Page = () => {
     return (
         <div className="max-w-2xl py-[5svh] mx-auto p-6 text-gray-800">
             <h1 className="text-2xl font-bold mb-4">Privacy Policy</h1>
-            <p className="mb-4">This is Movie Hunt's Privacy Policy. This document explains our policies for the collection, use, and disclosure of personal information on our website.</p>
+            <p className="mb-4">This is Movie Hunt&apos;s Privacy Policy. This document explains our policies for the collection, use, and disclosure of personal information on our website.</p>
             
             <h2 className="text-lg font-semibold mt-6 mb-2">Collection of Data</h2>
             <p className="mb-4">Like many websites, we may automatically collect general information such as IP addresses, cookies, and server logs to enhance user experience.</p>

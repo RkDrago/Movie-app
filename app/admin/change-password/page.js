@@ -14,7 +14,7 @@ const Page = () => {
     if (!token) {
       router.push("/admin");
     }
-  }, []);
+  }, [router]);
 
   const handlePasswordChange = async (e) => {
     e.preventDefault();

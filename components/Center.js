@@ -4,6 +4,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { getGuestWatchlist, saveToGuestWatchlist, isMovieInGuestWatchlist } from '../utils/localStorage';
 import { genreContext } from '@/context/context';
 import LikeButton from './LikeButton';
+import Image from 'next/image';
 
 const Center = ({ guestMovies, setGuestMovies, MovieInfoId }) => {
     const router = useRouter()
@@ -90,7 +91,7 @@ const Center = ({ guestMovies, setGuestMovies, MovieInfoId }) => {
                 <div className={`xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-2 ${pathname === '/' ? "grid" : "hidden"}`}>
                     {Array.isArray(newMovies) && newMovies.map((movie, idx) => (
                         <div key={idx} className="h-[clamp(180px, 12vw, 280px)] w-[clamp(140px, 9vw, 220px)] mx-auto rounded-xl my-2 relative overflow-hidden">
-                            <img src={movie.image} alt="" className="w-full h-full object-cover" loading="lazy" width="300" height="450" />
+                            <Image src={movie.image} alt="" className="w-full h-full object-cover" loading="lazy" width="300" height="450" />
                             <div className="h-full w-full hover:bg-[#0000005f] absolute top-0 text-white text-sm group">
                                 <div className="flex gap-1 items-center bg-[#111111b5] text-xs !font-bold rounded px-1.5 py-0.5 absolute left-0">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" className="ipc-icon ipc-icon--star sc-d541859f-4 LNYqq" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path d="M12 17.27l4.15 2.51c.76.46 1.69-.22 1.49-1.08l-1.1-4.72 3.67-3.18c.67-.58.31-1.68-.57-1.75l-4.83-.41-1.89-4.46c-.34-.81-1.5-.81-1.84 0L9.19 8.63l-4.83.41c-.88.07-1.24 1.17-.57 1.75l3.67 3.18-1.1 4.72c-.2.86.73 1.54 1.49 1.08l4.15-2.5z"></path></svg>
@@ -103,7 +104,7 @@ const Center = ({ guestMovies, setGuestMovies, MovieInfoId }) => {
                                         </svg>
                                     </button>
                                     <button onClick={(e) => { handleAddAndRemove(movie) }} className="cursor-pointer flex justify-center items-center h-7 w-7 rounded-full bg-[#05050566] hover:bg-[#ff000041]">
-                                        <img className="w-[20px] transition-all" src={guestMovies.some((m) => m._id === movie._id) ? "/icons/collection3.png" : "/icons/collection2.png"} />
+                                        <Image width={20} height={18} src={guestMovies.some((m) => m._id === movie._id) ? "/icons/collection3.png" : "/icons/collection2.png"} alt='' />
                                     </button>
                                 </div>
                                 <div className="h-[clamp(15%, 22%, 30%)] absolute bottom-0 w-full flex flex-col items-center bg-gradient-to-t from-black to-transparent">
@@ -127,11 +128,11 @@ const Center = ({ guestMovies, setGuestMovies, MovieInfoId }) => {
                     <div className="w-full h-[120px] bg-yellow-100"></div>
                 </div>
                 {filteredMovies.length === 0
-                    ? <p className={`text-gray-500 text-sm p-5 ${pathname === '/search-palette' ? "block" : "hidden"}`}>Sorry, We don't have any match for your search!</p>
+                    ? <p className={`text-gray-500 text-sm p-5 ${pathname === '/search-palette' ? "block" : "hidden"}`}>Sorry, We don&apos;t have any match for your search!</p>
                     : (<div className={`xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-2 pt-2 ${pathname === '/search-palette' ? "grid" : "hidden"}`}>
                         {filteredMovies.map((movie, idx) => (
                             <div key={idx} className="h-[clamp(180px, 12vw, 280px)] w-[clamp(140px, 9vw, 220px)] mx-auto rounded-xl my-2 relative overflow-hidden">
-                                <img src={movie.image} alt="" className="w-full h-full object-cover" loading="lazy" width="300" height="450" />
+                                <Image src={movie.image} alt="" className="w-full h-full object-cover" loading="lazy" width="300" height="450" />
                                 <div className="h-full w-full hover:bg-[#0000005f] absolute top-0 text-white text-sm group">
                                     <div className="flex gap-1 items-center bg-[#111111b5] text-xs !font-bold rounded px-1.5 py-0.5 absolute left-0">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" className="ipc-icon ipc-icon--star sc-d541859f-4 LNYqq" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path d="M12 17.27l4.15 2.51c.76.46 1.69-.22 1.49-1.08l-1.1-4.72 3.67-3.18c.67-.58.31-1.68-.57-1.75l-4.83-.41-1.89-4.46c-.34-.81-1.5-.81-1.84 0L9.19 8.63l-4.83.41c-.88.07-1.24 1.17-.57 1.75l3.67 3.18-1.1 4.72c-.2.86.73 1.54 1.49 1.08l4.15-2.5z"></path></svg>
@@ -144,7 +145,7 @@ const Center = ({ guestMovies, setGuestMovies, MovieInfoId }) => {
                                             </svg>
                                         </button>
                                         <button onClick={(e) => { handleAddAndRemove(movie) }} className="cursor-pointer flex justify-center items-center h-7 w-7 rounded-full bg-[#05050566] hover:bg-[#ff000041]">
-                                            <img className="w-[20px] transition-all" src={guestMovies.some((m) => m._id === movie._id) ? "/icons/collection3.png" : "/icons/collection2.png"} />
+                                            <Image width={20} height={18} src={guestMovies.some((m) => m._id === movie._id) ? "/icons/collection3.png" : "/icons/collection2.png"} alt='' />
                                         </button>
                                     </div>
                                     <div className="h-[clamp(15%, 22%, 30%)] absolute bottom-0 w-full flex flex-col items-center bg-gradient-to-t from-black to-transparent">
@@ -169,7 +170,7 @@ const Center = ({ guestMovies, setGuestMovies, MovieInfoId }) => {
                 <div className={`xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-2 ${pathname === '/popular' ? "grid" : "hidden"}`}>
                     {Array.isArray(popularMovies) && popularMovies.map((movie, idx) => (
                         <div key={idx} className="h-[clamp(180px, 12vw, 280px)] w-[clamp(140px, 9vw, 220px)] mx-auto rounded-xl my-2 relative overflow-hidden">
-                            <img src={movie.image} alt="" className="w-full h-full object-cover" loading="lazy" width="300" height="450" />
+                            <Image src={movie.image} alt="" className="w-full h-full object-cover" loading="lazy" width="300" height="450" />
                             <div className="h-full w-full hover:bg-[#0000005f] absolute top-0 text-white text-sm group">
                                 <div className="flex gap-1 items-center bg-[#111111b5] text-xs !font-bold rounded px-1.5 py-0.5 absolute left-0">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" className="ipc-icon ipc-icon--star sc-d541859f-4 LNYqq" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path d="M12 17.27l4.15 2.51c.76.46 1.69-.22 1.49-1.08l-1.1-4.72 3.67-3.18c.67-.58.31-1.68-.57-1.75l-4.83-.41-1.89-4.46c-.34-.81-1.5-.81-1.84 0L9.19 8.63l-4.83.41c-.88.07-1.24 1.17-.57 1.75l3.67 3.18-1.1 4.72c-.2.86.73 1.54 1.49 1.08l4.15-2.5z"></path></svg>
@@ -182,7 +183,7 @@ const Center = ({ guestMovies, setGuestMovies, MovieInfoId }) => {
                                         </svg>
                                     </button>
                                     <button onClick={(e) => { handleAddAndRemove(movie) }} className="cursor-pointer flex justify-center items-center h-7 w-7 rounded-full bg-[#05050566] hover:bg-[#ff000041]">
-                                        <img className="w-[20px] transition-all" src={guestMovies.some((m) => m._id === movie._id) ? "/icons/collection3.png" : "/icons/collection2.png"} />
+                                        <Image width={20} height={18} src={guestMovies.some((m) => m._id === movie._id) ? "/icons/collection3.png" : "/icons/collection2.png"} alt='' />
                                     </button>
                                 </div>
                                 <div className="h-[clamp(15%, 22%, 30%)] absolute bottom-0 w-full flex flex-col items-center bg-gradient-to-t from-black to-transparent">
@@ -213,7 +214,7 @@ const Center = ({ guestMovies, setGuestMovies, MovieInfoId }) => {
                 <div className={`xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-2 ${pathname === '/random' ? "grid" : "hidden"}`}>
                     {Array.isArray(randomMovies) && randomMovies.map((movie, idx) => (
                         <div key={idx} className="h-[clamp(180px, 12vw, 280px)] w-[clamp(140px, 9vw, 220px)] mx-auto rounded-xl my-2 relative overflow-hidden">
-                            <img src={movie.image} alt="" className="w-full h-full object-cover" loading="lazy" width="300" height="450" />
+                            <Image src={movie.image} alt="" className="w-full h-full object-cover" loading="lazy" width="300" height="450" />
                             <div className="h-full w-full hover:bg-[#0000005f] absolute top-0 text-white text-sm group">
                                 <div className="flex gap-1 items-center bg-[#111111b5] text-xs !font-bold rounded px-1.5 py-0.5 absolute left-0">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" className="ipc-icon ipc-icon--star sc-d541859f-4 LNYqq" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path d="M12 17.27l4.15 2.51c.76.46 1.69-.22 1.49-1.08l-1.1-4.72 3.67-3.18c.67-.58.31-1.68-.57-1.75l-4.83-.41-1.89-4.46c-.34-.81-1.5-.81-1.84 0L9.19 8.63l-4.83.41c-.88.07-1.24 1.17-.57 1.75l3.67 3.18-1.1 4.72c-.2.86.73 1.54 1.49 1.08l4.15-2.5z"></path></svg>
@@ -226,7 +227,7 @@ const Center = ({ guestMovies, setGuestMovies, MovieInfoId }) => {
                                         </svg>
                                     </button>
                                     <button onClick={(e) => { handleAddAndRemove(movie) }} className="cursor-pointer flex justify-center items-center h-7 w-7 rounded-full bg-[#05050566] hover:bg-[#ff000041]">
-                                        <img className="w-[20px] transition-all" src={guestMovies.some((m) => m._id === movie._id) ? "/icons/collection3.png" : "/icons/collection2.png"} />
+                                        <Image width={20} height={18} src={guestMovies.some((m) => m._id === movie._id) ? "/icons/collection3.png" : "/icons/collection2.png"} alt='' />
                                     </button>
                                 </div>
                                 <div className="h-[clamp(15%, 22%, 30%)] absolute bottom-0 w-full flex flex-col items-center bg-gradient-to-t from-black to-transparent">
@@ -256,11 +257,11 @@ const Center = ({ guestMovies, setGuestMovies, MovieInfoId }) => {
                     <div className='h-[1px] w-full bg-gradient-to-r from-transparent via-[#3a3a3aae] to-transparent opacity-40'></div>
                 </div>
                 {guestMovies.length === 0
-                    ? <p className={`text-gray-500 text-sm p-5 ${pathname === '/collection' ? "block" : "hidden"}`}>You don't have any collections yet..</p>
+                    ? <p className={`text-gray-500 text-sm p-5 ${pathname === '/collection' ? "block" : "hidden"}`}>You don&apos;t have any collections yet..</p>
                     : (<div className={`xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-2 ${pathname === '/collection' ? "grid" : "hidden"}`}>
                         {guestMovies.map((movie, idx) => (
                             <div key={idx} className="h-[clamp(180px, 12vw, 280px)] w-[clamp(140px, 9vw, 220px)] mx-auto rounded-xl my-2 relative overflow-hidden">
-                                <img src={movie.image} alt="" className="w-full h-full object-cover" loading="lazy" width="300" height="450" />
+                                <Image src={movie.image} alt="" className="w-full h-full object-cover" loading="lazy" width="300" height="450" />
                                 <div className="h-full w-full hover:bg-[#0000005f] absolute top-0 text-white text-sm group">
                                     <div className="flex gap-1 items-center bg-[#111111b5] text-xs !font-bold rounded px-1.5 py-0.5 absolute left-0">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" className="ipc-icon ipc-icon--star sc-d541859f-4 LNYqq" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path d="M12 17.27l4.15 2.51c.76.46 1.69-.22 1.49-1.08l-1.1-4.72 3.67-3.18c.67-.58.31-1.68-.57-1.75l-4.83-.41-1.89-4.46c-.34-.81-1.5-.81-1.84 0L9.19 8.63l-4.83.41c-.88.07-1.24 1.17-.57 1.75l3.67 3.18-1.1 4.72c-.2.86.73 1.54 1.49 1.08l4.15-2.5z"></path></svg>
@@ -273,7 +274,7 @@ const Center = ({ guestMovies, setGuestMovies, MovieInfoId }) => {
                                             </svg>
                                         </button>
                                         <button onClick={(e) => { handleAddAndRemove(movie) }} className="cursor-pointer flex justify-center items-center h-7 w-7 rounded-full bg-[#05050566] hover:bg-[#ff000041]">
-                                            <img className="w-[20px] transition-all" src={guestMovies.some((m) => m._id === movie._id) ? "/icons/collection3.png" : "/icons/collection2.png"} />
+                                            <Image width={20} height={18} src={guestMovies.some((m) => m._id === movie._id) ? "/icons/collection3.png" : "/icons/collection2.png"} alt='' />
                                         </button>
                                     </div>
                                     <div className="h-[clamp(15%, 22%, 30%)] absolute bottom-0 w-full flex flex-col items-center bg-gradient-to-t from-black to-transparent">
@@ -298,11 +299,11 @@ const Center = ({ guestMovies, setGuestMovies, MovieInfoId }) => {
                     <div className="w-full h-[120px] bg-yellow-100"></div>
                 </div>
                 {infoMovie.length === 0
-                    ? <p className={`text-gray-500 text-sm p-5 ${pathname === `/search-palette/${infoMovie._id}` ? "block" : "hidden"}`}>Sorry, We don't have any data for this!</p>
+                    ? <p className={`text-gray-500 text-sm p-5 ${pathname === `/search-palette/${infoMovie._id}` ? "block" : "hidden"}`}>Sorry, We don&apos;t have any data for this!</p>
                     : (<div className={`p-2 mt-12 items-center ${pathname === `/search-palette/${infoMovie._id}` ? "flex flex-col" : "hidden"}`}>
                         <div className="my-3 p-2 rounded-3xl bg bg-[#58585824] border-8 border-[#5858583d]">
                             <div className="mx-auto rounded-xl relative overflow-hidden">
-                                <img src={infoMovie.image} alt={infoMovie.title} className="w-[300px] h-auto object-cover" loading="lazy" width="300" height="450" />
+                                <Image src={infoMovie.image} alt={infoMovie.title} className="h-auto object-cover" loading="lazy" width="300" height="450" />
                                 <div className="h-full w-full hover:bg-[#0000005f] absolute top-0 text-white text-sm group">
                                 </div>
                             </div>
@@ -312,7 +313,7 @@ const Center = ({ guestMovies, setGuestMovies, MovieInfoId }) => {
                             <div className="flex px-3 h-full w-full justify-between">
                                 <div className="flex gap-4">
                                     <button onClick={(e) => { handleAddAndRemove(infoMovie) }} className="border border-[#58585878] bg-[#bebebe20] cursor-pointer flex justify-center items-center h-full px-2.5 rounded-full hover:bg-[#bebebe62]">
-                                        <img className="w-[20px] transition-all" src={guestMovies.some((m) => m._id === infoMovie._id) ? "/icons/collection3.png" : "/icons/collection0.png"} />
+                                        <Image width={20} height={18} src={guestMovies.some((m) => m._id === infoMovie._id) ? "/icons/collection3.png" : "/icons/collection0.png"} alt=''/>
                                     </button>
                                     <LikeButton movieId={infoMovie._id}/>
                                 </div>
