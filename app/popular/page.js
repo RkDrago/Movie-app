@@ -1,7 +1,7 @@
 import WholePage from '@/components/WholePage'
 import React from 'react'
 
-const page = () => {
+const Page = () => {
   return (
     <>
       <WholePage/>
@@ -9,7 +9,7 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
 
 export const metadata = {
   title: "Movie Hunt - Most popular movie of 2025",

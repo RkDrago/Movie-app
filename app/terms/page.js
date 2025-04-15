@@ -1,6 +1,6 @@
 import React from 'react';
 
-const page = () => {
+const Page = () => {
     return (
         <div className="max-w-xl py-[5svh] mx-auto p-6 text-gray-800">
             <h1 className="text-xl !font-semibold mb-4 text-gray-700">Terms of Service</h1>
@@ -21,7 +21,7 @@ const page = () => {
     );
 };
 
-export default page;
+export default Page;
 
 export const metadata = {
   title: "Movie Hunt - Terms of Services",

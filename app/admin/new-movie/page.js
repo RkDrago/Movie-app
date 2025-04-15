@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
-const page = () => {
+const Page = () => {
     const router = useRouter();
     const [movieData, setMovieData] = useState('');
     const [message, setMessage] = useState('');
@@ -90,4 +90,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default Page;

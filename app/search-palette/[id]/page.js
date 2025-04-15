@@ -1,7 +1,7 @@
 import WholePage from '@/components/WholePage'
 import React from 'react'
 
-const page = async ({params}) => {
+const Page = async ({params}) => {
 
     const {id} = await params
 
@@ -12,7 +12,7 @@ const page = async ({params}) => {
     )
 }
 
-export default page
+export default Page
 
 export const metadata = {
     title: "Movie Hunt - Find Movies that you like!",

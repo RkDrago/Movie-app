@@ -1,6 +1,6 @@
 import React from 'react'
 
-const page = () => {
+const Page = () => {
   return (
     <>
       <div className="max-w-2xl mx-auto text-center py-16 px-6 text-[#111]">
@@ -14,7 +14,7 @@ const page = () => {
         <h2 className="text-lg font-semibold mt-8 mb-2">Who creates the collections?</h2>
         <p className="text-gray-600 mb-8 text-sm">
           You do! Movie Hunt is an open platform where users can browse, save, and curate their own collections
-          of movie and TV show posters. Whether you're a fan of classic cinema, binge-worthy series, or hidden indie gems,
+          of movie and TV show posters. Whether you&apos;re a fan of classic cinema, binge-worthy series, or hidden indie gems,
           you can build and share your personalized watchlist with others.
         </p>
 
@@ -41,7 +41,7 @@ const page = () => {
   );
 };
 
-export default page
+export default Page
 
 
 export const metadata = {

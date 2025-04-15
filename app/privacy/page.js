@@ -1,6 +1,6 @@
 import React from 'react';
 
-const page = () => {
+const Page = () => {
     return (
         <div className="max-w-2xl py-[5svh] mx-auto p-6 text-gray-800">
             <h1 className="text-2xl font-bold mb-4">Privacy Policy</h1>
@@ -31,7 +31,7 @@ const page = () => {
     );
 };
 
-export default page;
+export default Page;
 
 
 export const metadata = {
