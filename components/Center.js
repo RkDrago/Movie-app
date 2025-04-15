@@ -50,11 +50,7 @@ const Center = ({ guestMovies, setGuestMovies, MovieInfoId }) => {
         const movies = getGuestWatchlist();
         setGuestMovies(movies);
 
-    }, []);
-
-
-
-    console.log(infoMovie)
+    }, [setGuestMovies]);
 
     const handleAddAndRemove = (movie) => {
         const currentList = getGuestWatchlist();
