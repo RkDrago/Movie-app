@@ -72,7 +72,7 @@ const Center = ({ guestMovies, setGuestMovies, MovieInfoId }) => {
     };
 
     useEffect(() => {
-        if (MovieInfoId && allMovies.length > 0) {
+        if (MovieInfoId && Array.isArray(allMovies) && allMovies.length > 0) {
             const findMovieById = (id, allMovies) => {
                 const found = allMovies.find(movie => movie._id === id)
                 setInfoMovie(found)
@@ -88,7 +88,7 @@ const Center = ({ guestMovies, setGuestMovies, MovieInfoId }) => {
         <>
             <div className="min-h-[clamp(100vh, 200svh, 250vh)] px-2">
                 <div className={`xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-2 ${pathname === '/' ? "grid" : "hidden"}`}>
-                    {newMovies.map((movie, idx) => (
+                    {Array.isArray(newMovies) && newMovies.map((movie, idx) => (
                         <div key={idx} className="h-[clamp(180px, 12vw, 280px)] w-[clamp(140px, 9vw, 220px)] mx-auto rounded-xl my-2 relative overflow-hidden">
                             <img src={movie.image} alt="" className="w-full h-full object-cover" loading="lazy" width="300" height="450" />
                             <div className="h-full w-full hover:bg-[#0000005f] absolute top-0 text-white text-sm group">
@@ -167,7 +167,7 @@ const Center = ({ guestMovies, setGuestMovies, MovieInfoId }) => {
                 }
 
                 <div className={`xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-2 ${pathname === '/popular' ? "grid" : "hidden"}`}>
-                    {popularMovies.map((movie, idx) => (
+                    {Array.isArray(popularMovies) && popularMovies.map((movie, idx) => (
                         <div key={idx} className="h-[clamp(180px, 12vw, 280px)] w-[clamp(140px, 9vw, 220px)] mx-auto rounded-xl my-2 relative overflow-hidden">
                             <img src={movie.image} alt="" className="w-full h-full object-cover" loading="lazy" width="300" height="450" />
                             <div className="h-full w-full hover:bg-[#0000005f] absolute top-0 text-white text-sm group">
@@ -211,7 +211,7 @@ const Center = ({ guestMovies, setGuestMovies, MovieInfoId }) => {
                     <div className='h-[1px] w-full bg-gradient-to-r from-transparent via-[#3a3a3aae] to-transparent opacity-40'></div>
                 </div>
                 <div className={`xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-2 ${pathname === '/random' ? "grid" : "hidden"}`}>
-                    {randomMovies.map((movie, idx) => (
+                    {Array.isArray(randomMovies) && randomMovies.map((movie, idx) => (
                         <div key={idx} className="h-[clamp(180px, 12vw, 280px)] w-[clamp(140px, 9vw, 220px)] mx-auto rounded-xl my-2 relative overflow-hidden">
                             <img src={movie.image} alt="" className="w-full h-full object-cover" loading="lazy" width="300" height="450" />
                             <div className="h-full w-full hover:bg-[#0000005f] absolute top-0 text-white text-sm group">

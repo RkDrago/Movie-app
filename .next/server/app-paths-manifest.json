@@ -1,5 +1,10 @@
 {
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/admin/dashboard/page": "app/admin/dashboard/page.js",
   "/page": "app/page.js",
+  "/search-palette/[id]/page": "app/search-palette/[id]/page.js",
+  "/admin/new-movie/page": "app/admin/new-movie/page.js",
   "/search-palette/page": "app/search-palette/page.js",
-  "/search-palette/[id]/page": "app/search-palette/[id]/page.js"
+  "/admin/change-password/page": "app/admin/change-password/page.js",
+  "/admin/movies/page": "app/admin/movies/page.js"
 }

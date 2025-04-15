@@ -85,6 +85,8 @@ const Navbar = () => {
 
 
     useEffect(() => {
+        if (!Array.isArray(allMovies)) return;
+
         const filtered = allMovies.filter((movie) => {
             const matchesSearch = movie.title.toLowerCase().includes(searchQuery.toLowerCase());
 
