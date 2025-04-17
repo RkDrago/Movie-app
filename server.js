@@ -25,7 +25,7 @@ async function startServer() {
     server.use('/api/users', userRoute);
     server.use('/api/movies', movieRoute);
 
-    // In your server.js or app.js
+    // handles sleep
    server.get('/ping', (req, res) => {
       res.send('pong');
     });
