@@ -25,6 +25,11 @@ async function startServer() {
     server.use('/api/users', userRoute);
     server.use('/api/movies', movieRoute);
 
+    // In your server.js or app.js
+   server.get('/ping', (req, res) => {
+      res.send('pong');
+    });
+
     // Handle Next.js pages
     server.use((req, res) => {
       return handle(req, res);
