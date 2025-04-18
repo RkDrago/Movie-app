@@ -38,6 +38,10 @@ const nextConfig = {
           protocol: 'https',
           hostname: 'images.moviesanywhere.com',
         },
+        {
+          protocol: 'https',
+          hostname: 'www.lucasfilm.com',
+        },
       ],
     },
   };

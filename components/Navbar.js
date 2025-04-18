@@ -114,7 +114,7 @@ const Navbar = () => {
                 {/* Logo */}
                 <div className="flex h-[65px] sm:w-[200px] w-[15%]">
                     <Link href={"/"} className="flex mx-auto items-center">
-                        <Image width={48} height={48} className="size-12 font-serif" src="/imgs/logo.png" alt="" />
+                        <Image priority width={48} height={48} className="size-12 font-serif" src="/imgs/logo.png" alt="" />
                         <span className="font-serif xl:text-[20px] inter sm:block hidden">
                             Movie Hunt
                         </span>
@@ -188,7 +188,7 @@ const Navbar = () => {
                         onClick={() => setIsOpen(!isOpen)}
                         ref={buttonRef}
                     >
-                        <Image width={20} height={20} src={isOpen ? "/icons/more1.png" : "/icons/more0.png"} alt="More" />
+                        <Image priority width={20} height={20} src={isOpen ? "/icons/more1.png" : "/icons/more0.png"} alt="More" />
                     </div>
 
                     {/* Dropdown Menu */}

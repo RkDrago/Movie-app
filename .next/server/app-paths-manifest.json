@@ -1,8 +1,4 @@
 {
-  "/search-palette/[id]/page": "app/search-palette/[id]/page.js",
-  "/page": "app/page.js",
-  "/popular/page": "app/popular/page.js",
-  "/admin/dashboard/page": "app/admin/dashboard/page.js",
-  "/admin/page": "app/admin/page.js",
-  "/admin/new-movie/page": "app/admin/new-movie/page.js"
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/page": "app/page.js"
 }
