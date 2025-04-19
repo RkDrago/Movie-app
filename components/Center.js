@@ -94,12 +94,12 @@ const Center = ({ guestMovies, setGuestMovies, MovieInfoId }) => {
                                     <h3>{movie.rating}</h3>
                                 </div>
                                 <div className="flex flex-col gap-1 p-2 w-[clamp(15%, 25%, 30%)] absolute transition-transform duration-200 ease-in-out transform lg:-translate-y-full group-hover:translate-y-0 top-0 right-0">
-                                    <button onClick={() => router.push(`/search-palette/${movie._id}`)} className="infobtn flex justify-center items-center h-7 w-7 rounded-full bg-[#05050566] hover:bg-[#ffffff39] cursor-pointer">
+                                    <button title='Movie info' onClick={() => router.push(`/search-palette/${movie._id}`)} className="infobtn flex justify-center items-center h-7 w-7 rounded-full bg-[#05050566] hover:bg-[#ffffff39] cursor-pointer">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" role="img" viewBox="0 0 24 24" width="20" height="20" data-icon="ChevronDownStandard" aria-hidden="true">
                                             <path fillRule="evenodd" clipRule="evenodd" d="M12 15.5859L19.2928 8.29297L20.7071 9.70718L12.7071 17.7072C12.5195 17.8947 12.2652 18.0001 12 18.0001C11.7347 18.0001 11.4804 17.8947 11.2928 17.7072L3.29285 9.70718L4.70706 8.29297L12 15.5859Z" fill="currentColor"></path>
                                         </svg>
                                     </button>
-                                    <button onClick={(e) => { handleAddAndRemove(movie) }} className="cursor-pointer flex justify-center items-center h-7 w-7 rounded-full bg-[#05050566] hover:bg-[#ff000041]">
+                                    <button title={guestMovies.some((m) => m._id === movie._id) ? "Remove from collection" : "Add to collection"} onClick={(e) => { handleAddAndRemove(movie) }} className="cursor-pointer flex justify-center items-center h-7 w-7 rounded-full bg-[#05050566] hover:bg-[#ff000041]">
                                         <Image width={20} height={18} src={guestMovies.some((m) => m._id === movie._id) ? "/icons/collection3.png" : "/icons/collection2.png"} alt='' />
                                     </button>
                                 </div>
@@ -135,12 +135,12 @@ const Center = ({ guestMovies, setGuestMovies, MovieInfoId }) => {
                                         <h3>{movie.rating}</h3>
                                     </div>
                                     <div className="flex flex-col gap-1 p-2 w-[clamp(15%, 25%, 30%)] absolute transition-transform duration-200 ease-in-out transform lg:-translate-y-full group-hover:translate-y-0 top-0 right-0">
-                                        <button onClick={() => router.push(`/search-palette/${movie._id}`)} className="flex justify-center items-center h-7 w-7 rounded-full bg-[#05050566] hover:bg-[#ffffff39] cursor-pointer">
+                                        <button title='Movie info' onClick={() => router.push(`/search-palette/${movie._id}`)} className="flex justify-center items-center h-7 w-7 rounded-full bg-[#05050566] hover:bg-[#ffffff39] cursor-pointer">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" role="img" viewBox="0 0 24 24" width="20" height="20" data-icon="ChevronDownStandard" aria-hidden="true">
                                                 <path fillRule="evenodd" clipRule="evenodd" d="M12 15.5859L19.2928 8.29297L20.7071 9.70718L12.7071 17.7072C12.5195 17.8947 12.2652 18.0001 12 18.0001C11.7347 18.0001 11.4804 17.8947 11.2928 17.7072L3.29285 9.70718L4.70706 8.29297L12 15.5859Z" fill="currentColor"></path>
                                             </svg>
                                         </button>
-                                        <button onClick={(e) => { handleAddAndRemove(movie) }} className="cursor-pointer flex justify-center items-center h-7 w-7 rounded-full bg-[#05050566] hover:bg-[#ff000041]">
+                                        <button title={guestMovies.some((m) => m._id === movie._id) ? "Remove from collection" : "Add to collection"} onClick={(e) => { handleAddAndRemove(movie) }} className="cursor-pointer flex justify-center items-center h-7 w-7 rounded-full bg-[#05050566] hover:bg-[#ff000041]">
                                             <Image width={20} height={18} src={guestMovies.some((m) => m._id === movie._id) ? "/icons/collection3.png" : "/icons/collection2.png"} alt='' />
                                         </button>
                                     </div>
@@ -173,12 +173,12 @@ const Center = ({ guestMovies, setGuestMovies, MovieInfoId }) => {
                                     <h3>{movie.rating}</h3>
                                 </div>
                                 <div className="flex flex-col gap-1 p-2 w-[clamp(15%, 25%, 30%)] absolute transition-transform duration-200 ease-in-out transform lg:-translate-y-full group-hover:translate-y-0 top-0 right-0">
-                                    <button onClick={() => router.push(`/search-palette/${movie._id}`)} className="flex justify-center items-center h-7 w-7 rounded-full bg-[#05050566] hover:bg-[#ffffff39] cursor-pointer">
+                                    <button title='Movie info' onClick={() => router.push(`/search-palette/${movie._id}`)} className="flex justify-center items-center h-7 w-7 rounded-full bg-[#05050566] hover:bg-[#ffffff39] cursor-pointer">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" role="img" viewBox="0 0 24 24" width="20" height="20" data-icon="ChevronDownStandard" aria-hidden="true">
                                             <path fillRule="evenodd" clipRule="evenodd" d="M12 15.5859L19.2928 8.29297L20.7071 9.70718L12.7071 17.7072C12.5195 17.8947 12.2652 18.0001 12 18.0001C11.7347 18.0001 11.4804 17.8947 11.2928 17.7072L3.29285 9.70718L4.70706 8.29297L12 15.5859Z" fill="currentColor"></path>
                                         </svg>
                                     </button>
-                                    <button onClick={(e) => { handleAddAndRemove(movie) }} className="cursor-pointer flex justify-center items-center h-7 w-7 rounded-full bg-[#05050566] hover:bg-[#ff000041]">
+                                    <button title={guestMovies.some((m) => m._id === movie._id) ? "Remove from collection" : "Add to collection"} onClick={(e) => { handleAddAndRemove(movie) }} className="cursor-pointer flex justify-center items-center h-7 w-7 rounded-full bg-[#05050566] hover:bg-[#ff000041]">
                                         <Image width={20} height={18} src={guestMovies.some((m) => m._id === movie._id) ? "/icons/collection3.png" : "/icons/collection2.png"} alt='' />
                                     </button>
                                 </div>
@@ -217,12 +217,12 @@ const Center = ({ guestMovies, setGuestMovies, MovieInfoId }) => {
                                     <h3>{movie.rating}</h3>
                                 </div>
                                 <div className="flex flex-col gap-1 p-2 w-[clamp(15%, 25%, 30%)] absolute transition-transform duration-200 ease-in-out transform lg:-translate-y-full group-hover:translate-y-0 top-0 right-0">
-                                    <button onClick={() => router.push(`/search-palette/${movie._id}`)} className="flex justify-center items-center h-7 w-7 rounded-full bg-[#05050566] hover:bg-[#ffffff39] cursor-pointer">
+                                    <button title='Movie info' onClick={() => router.push(`/search-palette/${movie._id}`)} className="flex justify-center items-center h-7 w-7 rounded-full bg-[#05050566] hover:bg-[#ffffff39] cursor-pointer">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" role="img" viewBox="0 0 24 24" width="20" height="20" data-icon="ChevronDownStandard" aria-hidden="true">
                                             <path fillRule="evenodd" clipRule="evenodd" d="M12 15.5859L19.2928 8.29297L20.7071 9.70718L12.7071 17.7072C12.5195 17.8947 12.2652 18.0001 12 18.0001C11.7347 18.0001 11.4804 17.8947 11.2928 17.7072L3.29285 9.70718L4.70706 8.29297L12 15.5859Z" fill="currentColor"></path>
                                         </svg>
                                     </button>
-                                    <button onClick={(e) => { handleAddAndRemove(movie) }} className="cursor-pointer flex justify-center items-center h-7 w-7 rounded-full bg-[#05050566] hover:bg-[#ff000041]">
+                                    <button title={guestMovies.some((m) => m._id === movie._id) ? "Remove from collection" : "Add to collection"} onClick={(e) => { handleAddAndRemove(movie) }} className="cursor-pointer flex justify-center items-center h-7 w-7 rounded-full bg-[#05050566] hover:bg-[#ff000041]">
                                         <Image width={20} height={18} src={guestMovies.some((m) => m._id === movie._id) ? "/icons/collection3.png" : "/icons/collection2.png"} alt='' />
                                     </button>
                                 </div>
@@ -264,12 +264,12 @@ const Center = ({ guestMovies, setGuestMovies, MovieInfoId }) => {
                                         <h3>{movie.rating}</h3>
                                     </div>
                                     <div className="flex flex-col gap-1 p-2 w-[clamp(15%, 25%, 30%)] absolute transition-transform duration-200 ease-in-out transform lg:-translate-y-full group-hover:translate-y-0 top-0 right-0">
-                                        <button onClick={() => router.push(`/search-palette/${movie._id}`)} className="flex justify-center items-center h-7 w-7 rounded-full bg-[#05050566] hover:bg-[#ffffff39] cursor-pointer">
+                                        <button title='Movie info' onClick={() => router.push(`/search-palette/${movie._id}`)} className="flex justify-center items-center h-7 w-7 rounded-full bg-[#05050566] hover:bg-[#ffffff39] cursor-pointer">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" role="img" viewBox="0 0 24 24" width="20" height="20" data-icon="ChevronDownStandard" aria-hidden="true">
                                                 <path fillRule="evenodd" clipRule="evenodd" d="M12 15.5859L19.2928 8.29297L20.7071 9.70718L12.7071 17.7072C12.5195 17.8947 12.2652 18.0001 12 18.0001C11.7347 18.0001 11.4804 17.8947 11.2928 17.7072L3.29285 9.70718L4.70706 8.29297L12 15.5859Z" fill="currentColor"></path>
                                             </svg>
                                         </button>
-                                        <button onClick={(e) => { handleAddAndRemove(movie) }} className="cursor-pointer flex justify-center items-center h-7 w-7 rounded-full bg-[#05050566] hover:bg-[#ff000041]">
+                                        <button title={guestMovies.some((m) => m._id === movie._id) ? "Remove from collection" : "Add to collection"} onClick={(e) => { handleAddAndRemove(movie) }} className="cursor-pointer flex justify-center items-center h-7 w-7 rounded-full bg-[#05050566] hover:bg-[#ff000041]">
                                             <Image width={20} height={18} src={guestMovies.some((m) => m._id === movie._id) ? "/icons/collection3.png" : "/icons/collection2.png"} alt='' />
                                         </button>
                                     </div>
@@ -308,7 +308,7 @@ const Center = ({ guestMovies, setGuestMovies, MovieInfoId }) => {
                             <div className='h-px w-full bg-[#3a3a3ac8] opacity-40 absolute top-0'></div>
                             <div className="flex px-3 h-full w-full justify-between">
                                 <div className="flex gap-4">
-                                    <button onClick={(e) => { handleAddAndRemove(infoMovie) }} className="border border-[#58585878] bg-[#bebebe20] cursor-pointer flex justify-center items-center h-full px-2.5 rounded-full hover:bg-[#bebebe62]">
+                                    <button title={guestMovies.some((m) => m._id === infoMovie._id) ? "Remove from collection" : "Add to collection"} onClick={(e) => { handleAddAndRemove(infoMovie) }} className="border border-[#58585878] bg-[#bebebe20] cursor-pointer flex justify-center items-center h-full px-2.5 rounded-full hover:bg-[#bebebe62]">
                                         <Image width={20} height={18} src={guestMovies.some((m) => m._id === infoMovie._id) ? "/icons/collection3.png" : "/icons/collection0.png"} alt=''/>
                                     </button>
                                     <LikeButton movieId={infoMovie._id}/>

@@ -28,7 +28,7 @@ const Right = ({ guestMovies, setGuestMovies }) => {
                     {guestMovies.map((movie, idx) => (
                         <div key={idx} className="overflow-hidden group h-[115px] w-[90px] mx-auto rounded-lg my-1 relative">
                             <Image fill src={movie.image} alt="" />
-                            <div onClick={(e) => { handleRemove(movie) }} className="absolute top-1 right-1 text-white text-xs bg-[#111111d9] opacity-60 hover:opacity-100 h-[17px] w-[17px] cursor-pointer group-hover:block hidden rounded-full text-center">✕</div>
+                            <div title='Remove from collection' onClick={(e) => { handleRemove(movie) }} className="absolute top-1 right-1 text-white text-xs bg-[#111111d9] opacity-60 hover:opacity-100 h-[17px] w-[17px] cursor-pointer group-hover:block hidden rounded-full text-center">✕</div>
                         </div>
                     ))}
                 </div>

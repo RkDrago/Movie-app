@@ -42,6 +42,7 @@ const LikeButton = ({ movieId }) => {
 
     return (
         <button
+        title="I like it"
             onClick={handleLike}
             className="border border-[#58585878] bg-[#bebebe20] cursor-pointer flex justify-center items-center h-full px-3.5 rounded-full hover:bg-[#bebebe62]"
         >
